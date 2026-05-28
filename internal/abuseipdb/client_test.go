@@ -1,6 +1,7 @@
 package abuseipdb
 
 import (
+	"context"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
@@ -61,7 +62,7 @@ func TestCheckIP_Success(t *testing.T) {
 	// point client at test server
 	c.http.Transport = srv.Client().Transport
 
-	report, err := c.CheckIP(t.Context(), "1.2.3.4")
+	report, err := c.CheckIP(context.Background(), "1.2.3.4")
 	// The client will hit the real abuseIPDBURL constant unless we swap it.
 	// Since we can't override the URL without refactor, we verify the struct path:
 	_ = err
