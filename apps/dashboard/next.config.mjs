@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   experimental: {
     // Required for WebSocket API routes
     serverComponentsExternalPackages: ["ioredis", "ws"],
