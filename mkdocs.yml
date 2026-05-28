@@ -1,39 +1,57 @@
 site_name: detect-backend-threat
-site_description: Production-grade cybersecurity threat detection platform
+site_description: Production-grade cybersecurity threat detection platform — real-time ingestion, multi-engine analysis, and SOC visualization
 site_url: https://vignesh2027.github.io/detect-backend-threat
 repo_url: https://github.com/vignesh2027/detect-backend-threat
 repo_name: vignesh2027/detect-backend-threat
 edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2024 vigneshwar · Apache 2.0
 
 theme:
   name: material
   palette:
-    scheme: slate
-    primary: custom
-    accent: custom
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Dark mode
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - toc.integrate
+    - navigation.footer
+    - toc.follow
+    - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
   font:
     text: Space Grotesk
     code: JetBrains Mono
   icon:
     repo: fontawesome/brands/github
+    logo: material/shield-check
 
 extra_css:
   - stylesheets/extra.css
 
 plugins:
-  - search
+  - search:
+      lang: en
   - mermaid2
   - git-revision-date-localized:
       enable_creation_date: true
+      type: timeago
 
 markdown_extensions:
   - pymdownx.superfences:
@@ -43,23 +61,44 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
-  - admonition
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
   - tables
   - attr_list
   - md_in_html
+  - def_list
+  - footnotes
   - toc:
       permalink: true
+      toc_depth: 3
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/vignesh2027
+      name: vigneshwar on GitHub
 
 nav:
   - Home: index.md
+  - How It Works: guides/how-it-works.md
   - Architecture: architecture.md
+  - API Reference:
+    - Ingest API: api/ingest.md
+  - Configuration: reference/configuration.md
+  - Guides:
+    - Development: guides/development.md
+    - Deployment: guides/deployment.md
   - Benchmarks: benchmarks.md
   - Threat Intelligence: threat-intel.md
-  - ADRs:
+  - Architecture Decisions:
     - "ADR-001: Go Detection Engine": adr/001-go-detection-engine.md
     - "ADR-002: Redis Streams over Kafka": adr/002-redis-streams-over-kafka.md
   - Runbooks:
