@@ -23,7 +23,11 @@ func main() {
 	if err != nil {
 		log.Fatalf("otel init: %v", err)
 	}
-	defer shutdown(ctx)
+	defer func() {
+		if err := shutdown(ctx); err != nil {
+			log.Printf("otel shutdown: %v", err)
+		}
+	}()
 
 	redisAddr := getEnv("REDIS_ADDR", "redis:6379")
 	redisCache := cache.NewClient(redisAddr, time.Hour)

@@ -36,7 +36,7 @@ func NewClient(addr string, timeout time.Duration, tracer trace.Tracer) *Client 
 // ScanBuffer scans buf using ClamAV's INSTREAM protocol.
 // Returns a Verdict with Clean=false and Signature set if malware is found.
 func (c *Client) ScanBuffer(ctx context.Context, buf []byte) (*Verdict, error) {
-	ctx, span := c.tracer.Start(ctx, "clamav.ScanBuffer")
+	_, span := c.tracer.Start(ctx, "clamav.ScanBuffer")
 	defer span.End()
 
 	conn, err := net.DialTimeout("tcp", c.addr, c.timeout)
@@ -44,7 +44,9 @@ func (c *Client) ScanBuffer(ctx context.Context, buf []byte) (*Verdict, error) {
 		return nil, fmt.Errorf("clamav: dial %s: %w", c.addr, err)
 	}
 	defer conn.Close()
-	conn.SetDeadline(time.Now().Add(c.timeout))
+	if err := conn.SetDeadline(time.Now().Add(c.timeout)); err != nil {
+		return nil, fmt.Errorf("clamav: set deadline: %w", err)
+	}
 
 	// Send INSTREAM command
 	if _, err := fmt.Fprint(conn, "nINSTREAM\n"); err != nil {

@@ -27,7 +27,9 @@ func TestLookupHash_Success(t *testing.T) {
 		resp := vtResponse{}
 		resp.Data.Attributes.LastAnalysisStats.Malicious = 5
 		resp.Data.Attributes.LastAnalysisStats.Undetected = 60
-		json.NewEncoder(w).Encode(resp)
+		if err := json.NewEncoder(w).Encode(resp); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+		}
 	}))
 	defer srv.Close()
 
