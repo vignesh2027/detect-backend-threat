@@ -33,7 +33,6 @@ func TestLookupHash_Success(t *testing.T) {
 	}))
 	defer srv.Close()
 
-	// Directly exercise the Report struct and parseability
 	c := newTestClient(srv)
 	require.NotNil(t, c)
 
@@ -54,4 +53,44 @@ func TestLookupHash_NotFound(t *testing.T) {
 		tracer: noop.NewTracerProvider().Tracer("test"),
 	}
 	require.NotNil(t, c)
+}
+
+func TestReport_MaliciousRatio(t *testing.T) {
+	cases := []struct {
+		malicious    int
+		total        int
+		expectHigh   bool
+	}{
+		{0, 70, false},
+		{1, 70, true},
+		{5, 70, true},
+		{70, 70, true},
+	}
+	for _, tc := range cases {
+		r := &Report{Malicious: tc.malicious, TotalEngines: tc.total}
+		isHigh := r.Malicious > 0
+		assert.Equal(t, tc.expectHigh, isHigh, "malicious=%d total=%d", tc.malicious, tc.total)
+	}
+}
+
+func TestReport_Fields(t *testing.T) {
+	r := &Report{
+		Hash:         "d41d8cd98f00b204e9800998ecf8427e",
+		Malicious:    3,
+		Suspicious:   2,
+		Undetected:   65,
+		TotalEngines: 70,
+		Permalink:    "https://www.virustotal.com/gui/file/d41d8cd98f00b204e9800998ecf8427e",
+	}
+	assert.Equal(t, "d41d8cd98f00b204e9800998ecf8427e", r.Hash)
+	assert.Equal(t, 3, r.Malicious)
+	assert.Equal(t, 70, r.TotalEngines)
+	assert.Contains(t, r.Permalink, "virustotal.com")
+}
+
+func TestNewClient(t *testing.T) {
+	tracer := noop.NewTracerProvider().Tracer("test")
+	c := NewClient("mykey", 10*time.Second, tracer)
+	require.NotNil(t, c)
+	assert.Equal(t, "mykey", c.apiKey)
 }

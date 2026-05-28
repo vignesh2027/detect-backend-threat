@@ -1,0 +1,30 @@
+# CODEOWNERS
+# Each line is a file pattern followed by one or more owners.
+# Owners are automatically requested for review when someone opens a
+# pull request that modifies matching files.
+
+# Default: all files require maintainer review
+*                           @vignesh2027
+
+# Go detection engine
+/internal/                  @vignesh2027
+/cmd/                       @vignesh2027
+/go.mod                     @vignesh2027
+/go.sum                     @vignesh2027
+
+# Node.js ingest service
+/apps/ingest/               @vignesh2027
+
+# Next.js SOC dashboard
+/apps/dashboard/            @vignesh2027
+
+# Infrastructure and DB
+/infra/                     @vignesh2027
+/docker-compose.yml         @vignesh2027
+
+# CI/CD pipelines — always require maintainer sign-off
+/.github/                   @vignesh2027
+
+# Security-sensitive files
+/SECURITY.md                @vignesh2027
+/GOVERNANCE.md              @vignesh2027
