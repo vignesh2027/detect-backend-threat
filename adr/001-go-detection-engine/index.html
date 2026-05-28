@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://vignesh2027.github.io/detect-backend-threat/">
+        <link rel="canonical" href="https://vignesh2027.github.io/detect-backend-threat/adr/001-go-detection-engine/">
       
       
+        <link rel="prev" href="../../threat-intel/">
       
-        <link rel="next" href="architecture/">
+      
+        <link rel="next" href="../002-redis-streams-over-kafka/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.20">
     
     
       
-        <title>detect-backend-threat</title>
+        <title>ADR-001: Go Detection Engine - detect-backend-threat</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#detect-backend-threat" class="md-skip">
+        <a href="#adr-001-go-for-the-detection-engine" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="detect-backend-threat" class="md-header__button md-logo" aria-label="detect-backend-threat" data-md-component="logo">
+    <a href="../.." title="detect-backend-threat" class="md-header__button md-logo" aria-label="detect-backend-threat" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              ADR-001: Go Detection Engine
             
           </span>
         </div>
@@ -187,11 +189,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -208,7 +208,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="architecture/" class="md-tabs__link">
+      <a href="../../architecture/" class="md-tabs__link">
         
   
     
@@ -225,7 +225,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="benchmarks/" class="md-tabs__link">
+      <a href="../../benchmarks/" class="md-tabs__link">
         
   
     
@@ -242,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="threat-intel/" class="md-tabs__link">
+      <a href="../../threat-intel/" class="md-tabs__link">
         
   
     
@@ -257,11 +257,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="adr/001-go-detection-engine/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   ADRs
@@ -279,7 +281,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="runbooks/high-false-positive-rate/" class="md-tabs__link">
+        <a href="../../runbooks/high-false-positive-rate/" class="md-tabs__link">
           
   
   Runbooks
@@ -295,7 +297,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="contributing/" class="md-tabs__link">
+      <a href="../../contributing/" class="md-tabs__link">
         
   
     
@@ -331,7 +333,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="detect-backend-threat" class="md-nav__button md-logo" aria-label="detect-backend-threat" data-md-component="logo">
+    <a href="../.." title="detect-backend-threat" class="md-nav__button md-logo" aria-label="detect-backend-threat" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -358,6 +360,131 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../benchmarks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Benchmarks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../threat-intel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Threat Intelligence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    ADRs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            ADRs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -374,18 +501,18 @@
           
   
   <span class="md-ellipsis">
-    Home
+    ADR-001: Go Detection Engine
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Home
+    ADR-001: Go Detection Engine
   </span>
   
 
@@ -407,27 +534,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#context" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Context
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#decision" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Start
+      Decision
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#consequences" class="md-nav__link">
     <span class="md-ellipsis">
-      Features
+      Consequences
     </span>
   </a>
   
@@ -440,128 +567,6 @@
     </li>
   
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="benchmarks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Benchmarks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="threat-intel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Threat Intelligence
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    ADRs
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            ADRs
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="adr/001-go-detection-engine/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ADR-001: Go Detection Engine
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -571,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="adr/002-redis-streams-over-kafka/" class="md-nav__link">
+      <a href="../002-redis-streams-over-kafka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="runbooks/high-false-positive-rate/" class="md-nav__link">
+      <a href="../../runbooks/high-false-positive-rate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -669,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/" class="md-nav__link">
+      <a href="../../contributing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,53 +705,34 @@
   
 
 
-<h1 id="detect-backend-threat">detect-backend-threat<a class="headerlink" href="#detect-backend-threat" title="Permanent link">&para;</a></h1>
-<p><strong>Production-grade cybersecurity threat detection platform</strong> — real-time ingestion, multi-engine analysis, and SOC visualization.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p><code>detect-backend-threat</code> ingests security events at high throughput, runs them through ClamAV, VirusTotal, and AbuseIPDB in parallel, persists findings in TimescaleDB, and streams live threat intelligence to a Three.js WebGL SOC dashboard — all in under <strong>221 ns/op</strong> detection overhead.</p>
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vignesh2027/detect-backend-threat
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>detect-backend-threat
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">          </span><span class="c1"># fill in POSTGRES_PASSWORD, API keys</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>make<span class="w"> </span>dev<span class="w">                      </span><span class="c1"># docker compose up --build</span>
-</code></pre></div>
-<p>Services start at:</p>
-<table>
-<thead>
-<tr>
-<th>Service</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Dashboard</td>
-<td>http://localhost:3000</td>
-</tr>
-<tr>
-<td>Ingest</td>
-<td>http://localhost:4000</td>
-</tr>
-<tr>
-<td>Postgres</td>
-<td>localhost:5432</td>
-</tr>
-<tr>
-<td>Redis</td>
-<td>localhost:6379</td>
-</tr>
-</tbody>
-</table>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Go detection engine</strong> — ClamAV INSTREAM, VirusTotal v3, AbuseIPDB v2 with Redis LRU cache (50k entries, 1h TTL)</li>
-<li><strong>Node.js ingest</strong> — WebSocket + REST, Zod validation, Redis Streams publisher, token-bucket rate limiter</li>
-<li><strong>TimescaleDB</strong> — hypertable partitioned events, 7-day retention, continuous aggregate per-minute summaries</li>
-<li><strong>SOC dashboard</strong> — Three.js WebGL globe (500 arcs @ 60fps), D3 force-directed threat graph, react-virtual event feed (100k+ rows)</li>
-<li><strong>OpenTelemetry</strong> — distributed tracing on every detection call</li>
-<li><strong>MITRE ATT&amp;CK</strong> — tactic tagging on every event, 8 techniques covered</li>
-</ul>
-<p>See <a href="architecture/">Architecture</a> for the full system design.</p>
+<h1 id="adr-001-go-for-the-detection-engine">ADR-001: Go for the Detection Engine<a class="headerlink" href="#adr-001-go-for-the-detection-engine" title="Permanent link">&para;</a></h1>
+<p><strong>Status</strong>: Accepted<br />
+<strong>Date</strong>: 2024-05</p>
+<hr />
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<p>The detection engine must:
+- Call three external services (ClamAV, VirusTotal, AbuseIPDB) per event
+- Achieve p99 orchestration latency &lt; 50ms
+- Run safely under concurrent load from Redis Streams consumers
+- Be testable without network access (unit tests)</p>
+<p>Languages evaluated: Go, Python (FastAPI), Rust, Node.js.</p>
+<h2 id="decision">Decision<a class="headerlink" href="#decision" title="Permanent link">&para;</a></h2>
+<p>Use <strong>Go</strong> for the detection engine (<code>cmd/detector/</code>, <code>internal/</code>).</p>
+<h2 id="consequences">Consequences<a class="headerlink" href="#consequences" title="Permanent link">&para;</a></h2>
+<p><strong>Positive</strong>
+- Goroutine-per-event concurrency model maps directly to "call 3 APIs in parallel, merge results"
+- 221 ns/op orchestration overhead — 4,000× under the 50ms budget, leaving headroom for network latency
+- No global state requirement — dependency injection is idiomatic; scanners are struct fields
+- <code>go test -race</code> catches data races at CI time
+- Static binary: single <code>FROM alpine</code> container layer, no runtime deps</p>
+<p><strong>Negative</strong>
+- More verbose than Python for rapid prototyping of new detection rules
+- ClamAV TCP protocol required manual framing (INSTREAM 4-byte length prefix) — no official Go client
+- Requires <code>go mod tidy</code> when adding scanner integrations</p>
+<p><strong>Trade-offs vs Rust</strong><br />
+Rust would have lower overhead (~50ns) but compile times and unsafe concerns for the Redis/HTTP clients outweigh the 170ns saving at this scale.</p>
+<p><strong>Trade-offs vs Python</strong><br />
+Python asyncio would work but GIL constraints and 10–50× higher per-call overhead would require horizontal scaling much earlier.</p>
 
 
 
@@ -831,10 +817,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.dd8806f2.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>

@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://vignesh2027.github.io/detect-backend-threat/">
+        <link rel="canonical" href="https://vignesh2027.github.io/detect-backend-threat/threat-intel/">
       
       
+        <link rel="prev" href="../benchmarks/">
       
-        <link rel="next" href="architecture/">
+      
+        <link rel="next" href="../adr/001-go-detection-engine/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.20">
     
     
       
-        <title>detect-backend-threat</title>
+        <title>Threat Intelligence - detect-backend-threat</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#detect-backend-threat" class="md-skip">
+        <a href="#threat-intelligence" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="detect-backend-threat" class="md-header__button md-logo" aria-label="detect-backend-threat" data-md-component="logo">
+    <a href=".." title="detect-backend-threat" class="md-header__button md-logo" aria-label="detect-backend-threat" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Threat Intelligence
             
           </span>
         </div>
@@ -187,11 +189,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -208,7 +208,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="architecture/" class="md-tabs__link">
+      <a href="../architecture/" class="md-tabs__link">
         
   
     
@@ -225,7 +225,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="benchmarks/" class="md-tabs__link">
+      <a href="../benchmarks/" class="md-tabs__link">
         
   
     
@@ -240,9 +240,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="threat-intel/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -261,7 +263,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="adr/001-go-detection-engine/" class="md-tabs__link">
+        <a href="../adr/001-go-detection-engine/" class="md-tabs__link">
           
   
   ADRs
@@ -279,7 +281,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="runbooks/high-false-positive-rate/" class="md-tabs__link">
+        <a href="../runbooks/high-false-positive-rate/" class="md-tabs__link">
           
   
   Runbooks
@@ -295,7 +297,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="contributing/" class="md-tabs__link">
+      <a href="../contributing/" class="md-tabs__link">
         
   
     
@@ -331,7 +333,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="detect-backend-threat" class="md-nav__button md-logo" aria-label="detect-backend-threat" data-md-component="logo">
+    <a href=".." title="detect-backend-threat" class="md-nav__button md-logo" aria-label="detect-backend-threat" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -358,6 +360,66 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Benchmarks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -374,18 +436,18 @@
           
   
   <span class="md-ellipsis">
-    Home
+    Threat Intelligence
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Home
+    Threat Intelligence
   </span>
   
 
@@ -407,27 +469,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#mitre-attck-coverage" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      MITRE ATT&amp;CK Coverage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MITRE ATT&CK Coverage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#covered-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Covered Techniques
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#tactic-codes-in-events" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Start
+      Tactic Codes in Events
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#ioc-sources" class="md-nav__link">
     <span class="md-ellipsis">
-      Features
+      IOC Sources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IOC Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clamav" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClamAV
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virustotal-v3" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirusTotal v3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abuseipdb-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      AbuseIPDB v2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-detection-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a Detection Rule
     </span>
   </a>
   
@@ -437,66 +556,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Architecture
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="benchmarks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Benchmarks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="threat-intel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Threat Intelligence
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -550,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="adr/001-go-detection-engine/" class="md-nav__link">
+      <a href="../adr/001-go-detection-engine/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="adr/002-redis-streams-over-kafka/" class="md-nav__link">
+      <a href="../adr/002-redis-streams-over-kafka/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -641,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="runbooks/high-false-positive-rate/" class="md-nav__link">
+      <a href="../runbooks/high-false-positive-rate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -669,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,53 +759,130 @@
   
 
 
-<h1 id="detect-backend-threat">detect-backend-threat<a class="headerlink" href="#detect-backend-threat" title="Permanent link">&para;</a></h1>
-<p><strong>Production-grade cybersecurity threat detection platform</strong> — real-time ingestion, multi-engine analysis, and SOC visualization.</p>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p><code>detect-backend-threat</code> ingests security events at high throughput, runs them through ClamAV, VirusTotal, and AbuseIPDB in parallel, persists findings in TimescaleDB, and streams live threat intelligence to a Three.js WebGL SOC dashboard — all in under <strong>221 ns/op</strong> detection overhead.</p>
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/vignesh2027/detect-backend-threat
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>detect-backend-threat
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">          </span><span class="c1"># fill in POSTGRES_PASSWORD, API keys</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>make<span class="w"> </span>dev<span class="w">                      </span><span class="c1"># docker compose up --build</span>
-</code></pre></div>
-<p>Services start at:</p>
+<h1 id="threat-intelligence">Threat Intelligence<a class="headerlink" href="#threat-intelligence" title="Permanent link">&para;</a></h1>
+<h2 id="mitre-attck-coverage">MITRE ATT&amp;CK Coverage<a class="headerlink" href="#mitre-attck-coverage" title="Permanent link">&para;</a></h2>
+<p>The platform maps detected events to MITRE ATT&amp;CK Enterprise v14 tactics and techniques.</p>
+<p><a class="md-button" href="https://mitre-attack.github.io/attack-navigator/#layerURL=https://raw.githubusercontent.com/vignesh2027/detect-backend-threat/main/infra/mitre/layer.json">View Navigator Layer</a></p>
+<h3 id="covered-techniques">Covered Techniques<a class="headerlink" href="#covered-techniques" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Service</th>
-<th>URL</th>
+<th>ID</th>
+<th>Name</th>
+<th>Detection Signal</th>
+<th>Tactic</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Dashboard</td>
-<td>http://localhost:3000</td>
+<td>T1566</td>
+<td>Phishing</td>
+<td>AbuseIPDB score ≥50 + HTTP event</td>
+<td>Initial Access</td>
 </tr>
 <tr>
-<td>Ingest</td>
-<td>http://localhost:4000</td>
+<td>T1203</td>
+<td>Exploitation for Client Execution</td>
+<td>ClamAV signature match</td>
+<td>Execution</td>
 </tr>
 <tr>
-<td>Postgres</td>
-<td>localhost:5432</td>
+<td>T1059</td>
+<td>Command and Scripting Interpreter</td>
+<td><code>process_spawn</code> event type</td>
+<td>Execution</td>
 </tr>
 <tr>
-<td>Redis</td>
-<td>localhost:6379</td>
+<td>T1071</td>
+<td>Application Layer Protocol</td>
+<td>Network connection to high-abuse IP</td>
+<td>C2</td>
+</tr>
+<tr>
+<td>T1046</td>
+<td>Network Service Discovery</td>
+<td>High-volume DNS query events</td>
+<td>Discovery</td>
+</tr>
+<tr>
+<td>T1190</td>
+<td>Exploit Public-Facing Application</td>
+<td>HTTP request + VirusTotal malicious hit</td>
+<td>Initial Access</td>
+</tr>
+<tr>
+<td>T1110</td>
+<td>Brute Force</td>
+<td>High-frequency <code>login_attempt</code> events</td>
+<td>Credential Access</td>
+</tr>
+<tr>
+<td>T1041</td>
+<td>Exfiltration Over C2 Channel</td>
+<td><code>file_upload</code> to known-bad IP</td>
+<td>Exfiltration</td>
 </tr>
 </tbody>
 </table>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<h3 id="tactic-codes-in-events">Tactic Codes in Events<a class="headerlink" href="#tactic-codes-in-events" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Tactic</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TA0001</td>
+<td>Initial Access</td>
+<td>VirusTotal malicious count &gt; 0</td>
+</tr>
+<tr>
+<td>TA0002</td>
+<td>Execution</td>
+<td>ClamAV signature found</td>
+</tr>
+<tr>
+<td>TA0011</td>
+<td>Command and Control</td>
+<td>AbuseIPDB score ≥ 50</td>
+</tr>
+<tr>
+<td>TA0043</td>
+<td>Reconnaissance</td>
+<td>Default (no other signal)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ioc-sources">IOC Sources<a class="headerlink" href="#ioc-sources" title="Permanent link">&para;</a></h2>
+<h3 id="clamav">ClamAV<a class="headerlink" href="#clamav" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Go detection engine</strong> — ClamAV INSTREAM, VirusTotal v3, AbuseIPDB v2 with Redis LRU cache (50k entries, 1h TTL)</li>
-<li><strong>Node.js ingest</strong> — WebSocket + REST, Zod validation, Redis Streams publisher, token-bucket rate limiter</li>
-<li><strong>TimescaleDB</strong> — hypertable partitioned events, 7-day retention, continuous aggregate per-minute summaries</li>
-<li><strong>SOC dashboard</strong> — Three.js WebGL globe (500 arcs @ 60fps), D3 force-directed threat graph, react-virtual event feed (100k+ rows)</li>
-<li><strong>OpenTelemetry</strong> — distributed tracing on every detection call</li>
-<li><strong>MITRE ATT&amp;CK</strong> — tactic tagging on every event, 8 techniques covered</li>
+<li><strong>Signature database</strong>: updated via <code>freshclamd</code> on container start</li>
+<li><strong>Protocol</strong>: INSTREAM TCP (port 3310)</li>
+<li><strong>Coverage</strong>: malware, exploits, phishing documents</li>
 </ul>
-<p>See <a href="architecture/">Architecture</a> for the full system design.</p>
+<h3 id="virustotal-v3">VirusTotal v3<a class="headerlink" href="#virustotal-v3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Endpoint</strong>: <code>GET /api/v3/files/{hash}</code></li>
+<li><strong>Aggregation</strong>: multi-engine malicious count threshold (1 → medium, 3 → high, 10 → critical)</li>
+<li><strong>Rate limits</strong>: handled by the detection engine; add Redis queue in Phase 3 for high volume</li>
+</ul>
+<h3 id="abuseipdb-v2">AbuseIPDB v2<a class="headerlink" href="#abuseipdb-v2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Endpoint</strong>: <code>GET /api/v2/check?ipAddress={ip}&amp;maxAgeInDays=90</code></li>
+<li><strong>Caching</strong>: Redis LRU, 50k entries, 1h TTL — reduces API calls by ~90% for repeat IPs</li>
+<li><strong>Score mapping</strong>: 0–19 low · 20–49 medium · 50–79 high · 80–100 critical</li>
+</ul>
+<h2 id="adding-a-detection-rule">Adding a Detection Rule<a class="headerlink" href="#adding-a-detection-rule" title="Permanent link">&para;</a></h2>
+<p>Detection rules are expressed as Go functions in <code>internal/detector/engine.go</code>. See <a href="../contributing/">Contributing</a> for the full guide.</p>
+<p>Example — custom severity override based on MITRE tactic:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// In computeSeverity, after existing checks:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">if</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">MitreTactic</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;TA0040&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Impact</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">severity</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">escalate</span><span class="p">(</span><span class="nx">severity</span><span class="p">,</span><span class="w"> </span><span class="nx">SeverityHigh</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -831,10 +967,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.dd8806f2.min.js"></script>
+      <script src="../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
     
   </body>

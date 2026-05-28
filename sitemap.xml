@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://vignesh2027.github.io/detect-backend-threat/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://vignesh2027.github.io/detect-backend-threat/architecture/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://vignesh2027.github.io/detect-backend-threat/benchmarks/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://vignesh2027.github.io/detect-backend-threat/contributing/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://vignesh2027.github.io/detect-backend-threat/threat-intel/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://vignesh2027.github.io/detect-backend-threat/adr/001-go-detection-engine/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://vignesh2027.github.io/detect-backend-threat/adr/002-redis-streams-over-kafka/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+    <url>
+         <loc>https://vignesh2027.github.io/detect-backend-threat/runbooks/high-false-positive-rate/</loc>
+         <lastmod>2026-05-28</lastmod>
+    </url>
+</urlset>
