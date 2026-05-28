@@ -1,0 +1,37 @@
+{
+  "name": "detect-backend-threat Coverage",
+  "versions": { "attack": "14", "navigator": "4.9", "layer": "4.5" },
+  "domain": "enterprise-attack",
+  "description": "MITRE ATT&CK techniques detected by detect-backend-threat Phase 1",
+  "filters": { "platforms": ["Linux", "Windows", "macOS", "Network"] },
+  "sorting": 3,
+  "layout": { "layout": "side", "aggregateFunction": "average", "showID": true, "showName": true },
+  "hideDisabled": false,
+  "techniques": [
+    { "techniqueID": "T1566",  "tactic": "initial-access",     "color": "#ff6b35", "comment": "Phishing — detected via AbuseIPDB score ≥50 + HTTP event type", "enabled": true, "score": 85 },
+    { "techniqueID": "T1203",  "tactic": "execution",          "color": "#ff3366", "comment": "Exploitation for Client Execution — ClamAV signature match",     "enabled": true, "score": 95 },
+    { "techniqueID": "T1059",  "tactic": "execution",          "color": "#ff3366", "comment": "Command and Scripting Interpreter — process_spawn events",         "enabled": true, "score": 80 },
+    { "techniqueID": "T1071",  "tactic": "command-and-control","color": "#fbbf24", "comment": "Application Layer Protocol — network_connection to high-abuse IPs","enabled": true, "score": 75 },
+    { "techniqueID": "T1046",  "tactic": "discovery",          "color": "#fbbf24", "comment": "Network Service Discovery — high-volume DNS query events",          "enabled": true, "score": 60 },
+    { "techniqueID": "T1190",  "tactic": "initial-access",     "color": "#ff6b35", "comment": "Exploit Public-Facing Application — http_request + VirusTotal hit", "enabled": true, "score": 88 },
+    { "techniqueID": "T1110",  "tactic": "credential-access",  "color": "#fbbf24", "comment": "Brute Force — login_attempt event with high frequency",             "enabled": true, "score": 70 },
+    { "techniqueID": "T1041",  "tactic": "exfiltration",       "color": "#ff6b35", "comment": "Exfiltration Over C2 Channel — file_upload to known-bad IP",        "enabled": true, "score": 82 }
+  ],
+  "gradient": {
+    "colors": ["#00ff88", "#fbbf24", "#ff3366"],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [
+    { "label": "Detected (ClamAV)",     "color": "#ff3366" },
+    { "label": "Detected (VirusTotal)", "color": "#ff6b35" },
+    { "label": "Detected (AbuseIPDB)", "color": "#fbbf24" }
+  ],
+  "metadata": [],
+  "links": [],
+  "showTacticRowBackground": true,
+  "tacticRowBackground": "#0f1117",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": false,
+  "selectVisibleTechniques": false
+}

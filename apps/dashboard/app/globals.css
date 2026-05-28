@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+/* ── Design tokens ── */
+:root {
+  --bg-base:       #0a0c10;
+  --bg-surface:    #0f1117;
+  --bg-elevated:   #161b22;
+  --border:        #21262d;
+
+  --accent:        #00ff88;
+  --accent-dim:    rgba(0, 255, 136, 0.12);
+
+  --sev-low:       #00ff88;
+  --sev-medium:    #fbbf24;
+  --sev-high:      #ff6b35;
+  --sev-critical:  #ff3366;
+
+  --text-primary:  #e6edf3;
+  --text-secondary:#8b949e;
+  --text-muted:    #484f58;
+
+  --font-mono:     "JetBrains Mono", "Fira Code", monospace;
+  --font-ui:       "Space Grotesk", "Inter", sans-serif;
+
+  --radius-sm:     4px;
+  --radius-md:     8px;
+  --radius-lg:     12px;
+
+  --z-panel:       100;
+  --z-overlay:     200;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar            { width: 6px; height: 6px; }
+::-webkit-scrollbar-track      { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb      { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover{ background: var(--text-muted); }
+
+/* ── Severity badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.badge-low      { background: rgba(0,255,136,0.12); color: var(--sev-low); }
+.badge-medium   { background: rgba(251,191,36,0.12); color: var(--sev-medium); }
+.badge-high     { background: rgba(255,107,53,0.12); color: var(--sev-high); }
+.badge-critical { background: rgba(255,51,102,0.15); color: var(--sev-critical); }
+.badge-tactic   { background: rgba(139,148,158,0.1); color: var(--text-secondary); }
+
+/* ── Feed row performance ── */
+.feed-row {
+  contain: strict;
+  will-change: transform;
+}

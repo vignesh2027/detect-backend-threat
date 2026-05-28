@@ -1,0 +1,104 @@
+name: Benchmark Regression
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  bench:
+    name: Benchmark Regression Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: true
+
+      # Benchmark the PR branch
+      - name: Bench PR branch
+        run: |
+          go test -bench=BenchmarkDetect -benchmem -benchtime=10s \
+            ./internal/detector/... | tee /tmp/bench-pr.txt
+          cat /tmp/bench-pr.txt
+
+      # Checkout main and benchmark it
+      - name: Checkout main
+        run: git checkout origin/main -- internal/detector/
+
+      - name: Bench main branch
+        run: |
+          go test -bench=BenchmarkDetect -benchmem -benchtime=10s \
+            ./internal/detector/... | tee /tmp/bench-main.txt
+          cat /tmp/bench-main.txt
+
+      # Compare and comment
+      - name: Install benchstat
+        run: go install golang.org/x/perf/cmd/benchstat@latest
+
+      - name: Compare benchmarks
+        id: compare
+        run: |
+          benchstat /tmp/bench-main.txt /tmp/bench-pr.txt > /tmp/bench-diff.txt
+          cat /tmp/bench-diff.txt
+          # Fail if p99 degraded > 5%
+          if grep -E '\+[5-9][0-9]\.' /tmp/bench-diff.txt; then
+            echo "REGRESSION=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "REGRESSION=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Comment PR with results
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const diff = fs.readFileSync('/tmp/bench-diff.txt', 'utf8');
+            const main = fs.readFileSync('/tmp/bench-main.txt', 'utf8');
+            const pr   = fs.readFileSync('/tmp/bench-pr.txt',   'utf8');
+            const regression = '${{ steps.compare.outputs.REGRESSION }}' === 'true';
+
+            const body = `## Benchmark Results ${regression ? '⚠️ REGRESSION DETECTED' : '✅ No regression'}
+
+            <details><summary>BenchmarkDetect — comparison</summary>
+
+            \`\`\`
+            ${diff}
+            \`\`\`
+
+            </details>
+
+            <details><summary>PR branch raw</summary>
+
+            \`\`\`
+            ${pr}
+            \`\`\`
+
+            </details>
+
+            <details><summary>main branch raw</summary>
+
+            \`\`\`
+            ${main}
+            \`\`\`
+
+            </details>`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner:        context.repo.owner,
+              repo:         context.repo.repo,
+              body,
+            });
+
+            if (regression) {
+              core.setFailed('Benchmark degraded > 5% vs main');
+            }

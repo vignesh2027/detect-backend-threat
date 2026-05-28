@@ -1,0 +1,68 @@
+site_name: detect-backend-threat
+site_description: Production-grade cybersecurity threat detection platform
+site_url: https://vignesh2027.github.io/detect-backend-threat
+repo_url: https://github.com/vignesh2027/detect-backend-threat
+repo_name: vignesh2027/detect-backend-threat
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: custom
+    accent: custom
+  custom_dir: docs/overrides
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  font:
+    text: Space Grotesk
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - mermaid2
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Benchmarks: benchmarks.md
+  - Threat Intelligence: threat-intel.md
+  - ADRs:
+    - "ADR-001: Go Detection Engine": adr/001-go-detection-engine.md
+    - "ADR-002: Redis Streams over Kafka": adr/002-redis-streams-over-kafka.md
+  - Runbooks:
+    - High False-Positive Rate: runbooks/high-false-positive-rate.md
+  - Contributing: ../CONTRIBUTING.md

@@ -1,0 +1,38 @@
+# Go
+bin/
+*.exe
+*.test
+*.out
+coverage.out
+
+# Node / Next.js
+node_modules/
+.next/
+dist/
+apps/*/node_modules/
+apps/*/.next/
+apps/*/dist/
+
+# Env — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# Docker
+docker-compose.override.yml
+
+# mkdocs build output
+site/
+
+# Go module cache
+vendor/
