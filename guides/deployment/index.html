@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://vignesh2027.github.io/detect-backend-threat/runbooks/high-false-positive-rate/">
+        <link rel="canonical" href="https://vignesh2027.github.io/detect-backend-threat/guides/deployment/">
       
       
-        <link rel="prev" href="../../adr/002-redis-streams-over-kafka/">
+        <link rel="prev" href="../development/">
       
       
-        <link rel="next" href="../../contributing/">
+        <link rel="next" href="../../benchmarks/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>High False-Positive Rate - detect-backend-threat</title>
+        <title>Deployment - detect-backend-threat</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#runbook-high-false-positive-rate" class="md-skip">
+        <a href="#deployment-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              High False-Positive Rate
+              Deployment
             
           </span>
         </div>
@@ -241,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../guides/how-it-works/" class="md-tabs__link">
+      <a href="../how-it-works/" class="md-tabs__link">
         
   
     
@@ -308,11 +308,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../guides/development/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../development/" class="md-tabs__link">
           
   
   Guides
@@ -378,13 +380,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../runbooks/high-false-positive-rate/" class="md-tabs__link">
           
   
   Runbooks
@@ -490,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/how-it-works/" class="md-nav__link">
+      <a href="../how-it-works/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -617,27 +617,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -648,7 +651,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Guides
@@ -662,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/development/" class="md-nav__link">
+      <a href="../development/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -680,10 +683,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../guides/deployment/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -692,6 +715,188 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose-development-staging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Compose (Development &amp; Staging)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Checklist
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reliability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rate Limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nginx-reverse-proxy-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nginx Reverse Proxy Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment-Specific Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Staging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ingest-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingest (Horizontal)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detector-horizontal-via-consumer-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detector (Horizontal via Consumer Groups)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timescaledb-read-replicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      TimescaleDB (Read Replicas)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-planned-phase-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes (Planned — Phase 6)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -839,30 +1044,27 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -873,7 +1075,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Runbooks
@@ -884,30 +1086,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    High False-Positive Rate
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../runbooks/high-false-positive-rate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -916,113 +1098,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#symptom" class="md-nav__link">
-    <span class="md-ellipsis">
-      Symptom
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#triage-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Triage Steps
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Triage Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-identify-the-signal-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Identify the signal source
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-clamav-false-positives" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. ClamAV false positives
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-abuseipdb-false-positives" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. AbuseIPDB false positives
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-virustotal-false-positives" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. VirusTotal false positives
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-immediate-mitigation" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Immediate mitigation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#escalation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Escalation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prevention" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prevention
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1082,64 +1157,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#symptom" class="md-nav__link">
+  <a href="#docker-compose-development-staging" class="md-nav__link">
     <span class="md-ellipsis">
-      Symptom
+      Docker Compose (Development &amp; Staging)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#triage-steps" class="md-nav__link">
+  <a href="#production-checklist" class="md-nav__link">
     <span class="md-ellipsis">
-      Triage Steps
+      Production Checklist
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Triage Steps">
+    <nav class="md-nav" aria-label="Production Checklist">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-identify-the-signal-source" class="md-nav__link">
+  <a href="#security" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Identify the signal source
+      Security
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-clamav-false-positives" class="md-nav__link">
+  <a href="#reliability" class="md-nav__link">
     <span class="md-ellipsis">
-      2. ClamAV false positives
+      Reliability
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-abuseipdb-false-positives" class="md-nav__link">
+  <a href="#observability" class="md-nav__link">
     <span class="md-ellipsis">
-      3. AbuseIPDB false positives
+      Observability
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-virustotal-false-positives" class="md-nav__link">
+  <a href="#rate-limits" class="md-nav__link">
     <span class="md-ellipsis">
-      4. VirusTotal false positives
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-immediate-mitigation" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Immediate mitigation
+      Rate Limits
     </span>
   </a>
   
@@ -1151,18 +1217,102 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#escalation" class="md-nav__link">
+  <a href="#nginx-reverse-proxy-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Escalation
+      Nginx Reverse Proxy Example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prevention" class="md-nav__link">
+  <a href="#environment-specific-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Prevention
+      Environment-Specific Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Staging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling Notes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ingest-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ingest (Horizontal)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detector-horizontal-via-consumer-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detector (Horizontal via Consumer Groups)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timescaledb-read-replicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      TimescaleDB (Read Replicas)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-planned-phase-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kubernetes (Planned — Phase 6)
     </span>
   </a>
   
@@ -1186,85 +1336,145 @@
   
 
 
-<h1 id="runbook-high-false-positive-rate">Runbook: High False-Positive Rate<a class="headerlink" href="#runbook-high-false-positive-rate" title="Permanent link">&para;</a></h1>
-<p><strong>Severity</strong>: SEV-2<br />
-<strong>Owner</strong>: SOC Engineering<br />
-<strong>Last reviewed</strong>: 2024-05</p>
+<h1 id="deployment-guide">Deployment Guide<a class="headerlink" href="#deployment-guide" title="Permanent link">&para;</a></h1>
 <hr />
-<h2 id="symptom">Symptom<a class="headerlink" href="#symptom" title="Permanent link">&para;</a></h2>
-<p>Dashboard shows &gt; 20% of events with verdict <code>SUSPICIOUS</code> or <code>MALICIOUS</code> for IPs/hashes that are known-good. Analysts report alert fatigue.</p>
-<h2 id="triage-steps">Triage Steps<a class="headerlink" href="#triage-steps" title="Permanent link">&para;</a></h2>
-<h3 id="1-identify-the-signal-source">1. Identify the signal source<a class="headerlink" href="#1-identify-the-signal-source" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Connect to TimescaleDB</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>psql<span class="w"> </span><span class="nv">$DATABASE_URL</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>--<span class="w"> </span>Which<span class="w"> </span>detector<span class="w"> </span>is<span class="w"> </span>generating<span class="w"> </span><span class="nb">false</span><span class="w"> </span>positives?
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>SELECT
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>verdict,
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>CASE
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span>WHEN<span class="w"> </span>clamav_sig<span class="w"> </span>IS<span class="w"> </span>NOT<span class="w"> </span>NULL<span class="w"> </span>THEN<span class="w"> </span><span class="s1">&#39;clamav&#39;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span>WHEN<span class="w"> </span>vt_malicious<span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w">       </span>THEN<span class="w"> </span><span class="s1">&#39;virustotal&#39;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span>WHEN<span class="w"> </span>abuse_score<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="w">      </span>THEN<span class="w"> </span><span class="s1">&#39;abuseipdb&#39;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span>ELSE<span class="w"> </span><span class="s1">&#39;unknown&#39;</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>END<span class="w"> </span>AS<span class="w"> </span>source,
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span>COUNT<span class="o">(</span>*<span class="o">)</span><span class="w"> </span>as<span class="w"> </span>count
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>FROM<span class="w"> </span>events
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>WHERE<span class="w"> </span>timestamp<span class="w"> </span>&gt;<span class="w"> </span>NOW<span class="o">()</span><span class="w"> </span>-<span class="w"> </span>INTERVAL<span class="w"> </span><span class="s1">&#39;1 hour&#39;</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span>AND<span class="w"> </span>verdict<span class="w"> </span>IN<span class="w"> </span><span class="o">(</span><span class="s1">&#39;SUSPICIOUS&#39;</span>,<span class="s1">&#39;MALICIOUS&#39;</span><span class="o">)</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>GROUP<span class="w"> </span>BY<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>ORDER<span class="w"> </span>BY<span class="w"> </span><span class="m">3</span><span class="w"> </span>DESC<span class="p">;</span>
+<h2 id="docker-compose-development-staging">Docker Compose (Development &amp; Staging)<a class="headerlink" href="#docker-compose-development-staging" title="Permanent link">&para;</a></h2>
+<p>The fastest path — all 6 services in one command.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">   </span><span class="c1"># fill in POSTGRES_PASSWORD + API keys</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>make<span class="w"> </span>dev<span class="w">               </span><span class="c1"># docker compose up --build</span>
 </span></code></pre></div>
-<h3 id="2-clamav-false-positives">2. ClamAV false positives<a class="headerlink" href="#2-clamav-false-positives" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Check signature causing FPs</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>SELECT<span class="w"> </span>clamav_sig,<span class="w"> </span>COUNT<span class="o">(</span>*<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>events
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>WHERE<span class="w"> </span>timestamp<span class="w"> </span>&gt;<span class="w"> </span>NOW<span class="o">()</span><span class="w"> </span>-<span class="w"> </span>INTERVAL<span class="w"> </span><span class="s1">&#39;1 hour&#39;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>AND<span class="w"> </span>clamav_sig<span class="w"> </span>IS<span class="w"> </span>NOT<span class="w"> </span>NULL
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>GROUP<span class="w"> </span>BY<span class="w"> </span><span class="m">1</span><span class="w"> </span>ORDER<span class="w"> </span>BY<span class="w"> </span><span class="m">2</span><span class="w"> </span>DESC<span class="w"> </span>LIMIT<span class="w"> </span><span class="m">10</span><span class="p">;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># If a known-benign signature:</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># 1. Submit FP report to ClamAV: https://www.clamav.net/reports/fp</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># 2. Add to local whitelist: /var/lib/clamav/local.ign2</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#    echo &quot;SHA256:deadbeef...&quot; &gt;&gt; /var/lib/clamav/local.ign2</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#    docker exec threat_clamav clamd --reload</span>
+<p><strong>Service startup order</strong> (enforced by <code>depends_on</code> + healthchecks):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>redis ──────────────────────────────────┐
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                                        ├── ingest (ready ~5s)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>postgres + redis + clamav (ready ~90s) ─┼── detector (ready ~95s)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>redis ──────────────────────────────────┘── dashboard (ready ~30s)
 </span></code></pre></div>
-<h3 id="3-abuseipdb-false-positives">3. AbuseIPDB false positives<a class="headerlink" href="#3-abuseipdb-false-positives" title="Permanent link">&para;</a></h3>
-<p>AbuseIPDB scores can be inflated for shared hosting or CDN IPs.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Check which IPs are scoring high</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>SELECT<span class="w"> </span>source_ip,<span class="w"> </span>MAX<span class="o">(</span>abuse_score<span class="o">)</span>,<span class="w"> </span>COUNT<span class="o">(</span>*<span class="o">)</span><span class="w"> </span>FROM<span class="w"> </span>events
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>WHERE<span class="w"> </span>timestamp<span class="w"> </span>&gt;<span class="w"> </span>NOW<span class="o">()</span><span class="w"> </span>-<span class="w"> </span>INTERVAL<span class="w"> </span><span class="s1">&#39;1 hour&#39;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>AND<span class="w"> </span>abuse_score<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">50</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>GROUP<span class="w"> </span>BY<span class="w"> </span><span class="m">1</span><span class="w"> </span>ORDER<span class="w"> </span>BY<span class="w"> </span><span class="m">2</span><span class="w"> </span>DESC<span class="w"> </span>LIMIT<span class="w"> </span><span class="m">20</span><span class="p">;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Remove cached score to force re-check:</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>redis-cli<span class="w"> </span>DEL<span class="w"> </span><span class="s2">&quot;abuseipdb:1.2.3.4&quot;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Raise the AbuseIPDB threshold (in internal/abuseipdb/client.go):</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># Change `score &gt;= 50` → `score &gt;= 70` in ScoreToSeverity()</span>
-</span></code></pre></div>
-<h3 id="4-virustotal-false-positives">4. VirusTotal false positives<a class="headerlink" href="#4-virustotal-false-positives" title="Permanent link">&para;</a></h3>
-<p>Low engine count with 1–2 detections is often a heuristic FP.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>--<span class="w"> </span>Hashes<span class="w"> </span>with<span class="w"> </span>only<span class="w"> </span><span class="m">1</span>-2<span class="w"> </span>malicious<span class="w"> </span>engines
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>SELECT<span class="w"> </span>file_hash,<span class="w"> </span>vt_malicious<span class="w"> </span>FROM<span class="w"> </span>events
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>WHERE<span class="w"> </span>timestamp<span class="w"> </span>&gt;<span class="w"> </span>NOW<span class="o">()</span><span class="w"> </span>-<span class="w"> </span>INTERVAL<span class="w"> </span><span class="s1">&#39;1 hour&#39;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>AND<span class="w"> </span>vt_malicious<span class="w"> </span>BETWEEN<span class="w"> </span><span class="m">1</span><span class="w"> </span>AND<span class="w"> </span><span class="m">2</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>GROUP<span class="w"> </span>BY<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span><span class="w"> </span>LIMIT<span class="w"> </span><span class="m">20</span><span class="p">;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Raise threshold: internal/detector/engine.go</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Change: `case r.VTReport.Malicious &gt;= 1:` → `&gt;= 3`</span>
-</span></code></pre></div>
-<h3 id="5-immediate-mitigation">5. Immediate mitigation<a class="headerlink" href="#5-immediate-mitigation" title="Permanent link">&para;</a></h3>
-<p>If alert volume is overwhelming analysts:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Temporarily raise all thresholds via env var (requires restart)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># ABUSEIPDB_MIN_SCORE=75 VIRUSTOTAL_MIN_ENGINES=5 docker compose restart detector</span>
-</span></code></pre></div>
-<h2 id="escalation">Escalation<a class="headerlink" href="#escalation" title="Permanent link">&para;</a></h2>
-<p>If FP rate &gt; 40% after triage: escalate to detection engineering. Review <a href="../../adr/001-go-detection-engine/">ADR-001</a> for threshold change process.</p>
-<h2 id="prevention">Prevention<a class="headerlink" href="#prevention" title="Permanent link">&para;</a></h2>
+<p>ClamAV is the slowest to start (signature download on first run — ~2 minutes). All other services wait for their dependencies to be healthy before starting.</p>
+<hr />
+<h2 id="production-checklist">Production Checklist<a class="headerlink" href="#production-checklist" title="Permanent link">&para;</a></h2>
+<p>Before exposing to real traffic, work through this checklist:</p>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Run weekly FP audit query (above) and track trend in Grafana</li>
-<li>Pin ClamAV signature DB version in production (<code>clamav/clamav:1.3.1</code> not <code>:stable</code>)</li>
-<li>Enable <code>dryRun</code> mode (Phase 3) before deploying threshold changes</li>
+<li>[ ] <strong>Rotate <code>POSTGRES_PASSWORD</code></strong> — use <code>openssl rand -base64 32</code></li>
+<li>[ ] <strong>Add a reverse proxy</strong> (Nginx / Caddy) in front of ingest (:4000) and dashboard (:3000) — they have no TLS or auth built in</li>
+<li>[ ] <strong>Add API key auth to ingest</strong> — the current implementation trusts all clients. For public exposure, add a middleware that checks <code>Authorization: Bearer &lt;token&gt;</code></li>
+<li>[ ] <strong>Separate Redis instances</strong> — use one Redis for the LRU cache (can lose data) and a separate one for Streams (enable AOF persistence)</li>
+<li>[ ] <strong>Pin image versions</strong> — change <code>clamav/clamav:stable</code> to a specific version like <code>clamav/clamav:1.3.1</code></li>
+<li>[ ] <strong>Review Trivy scan</strong> — run <code>make trivy</code> and address any CRITICAL CVEs before deploying</li>
 </ul>
+<h3 id="reliability">Reliability<a class="headerlink" href="#reliability" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] <strong>Enable Redis AOF</strong> for the Streams instance (<code>appendonly yes</code> in redis.conf)</li>
+<li>[ ] <strong>Set up TimescaleDB backups</strong> — <code>pg_dump</code> cron or use TimescaleDB cloud</li>
+<li>[ ] <strong>Configure alerting</strong> on detector container restarts</li>
+<li>[ ] <strong>Test the retention policy</strong> — verify chunks older than 7 days are being dropped</li>
+</ul>
+<h3 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] <strong>Point OTEL_ENDPOINT</strong> to a real collector (Jaeger, Grafana Tempo, Honeycomb)</li>
+<li>[ ] <strong>Set up Grafana</strong> dashboards for <code>threat_summary_1m</code> continuous aggregate</li>
+<li>[ ] <strong>Configure log aggregation</strong> (Loki, Datadog) for all container logs</li>
+</ul>
+<h3 id="rate-limits">Rate Limits<a class="headerlink" href="#rate-limits" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] <strong>VirusTotal free tier</strong>: 4 requests/minute — add a queue or upgrade to premium</li>
+<li>[ ] <strong>AbuseIPDB free tier</strong>: 1000 requests/day — the Redis cache reduces this significantly</li>
+</ul>
+<hr />
+<h2 id="nginx-reverse-proxy-example">Nginx Reverse Proxy Example<a class="headerlink" href="#nginx-reverse-proxy-example" title="Permanent link">&para;</a></h2>
+<div class="language-nginx highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># /etc/nginx/conf.d/detect-backend-threat.conf</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">soc.yourdomain.com</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="kn">ssl_certificate</span><span class="w">     </span><span class="s">/etc/ssl/certs/yourdomain.crt</span><span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="kn">ssl_certificate_key</span><span class="w"> </span><span class="s">/etc/ssl/private/yourdomain.key</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="c1"># Dashboard</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w">         </span><span class="s">http://localhost:3000</span><span class="p">;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w">   </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w">   </span><span class="s">Connection</span><span class="w"> </span><span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w">   </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="c1"># Ingest WebSocket</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/ws/</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w">         </span><span class="s">http://localhost:4000</span><span class="p">;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w">   </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w">   </span><span class="s">Connection</span><span class="w"> </span><span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="c1"># Ingest REST</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/api/events</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://localhost:4000/events</span><span class="p">;</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">        </span><span class="c1"># Basic API key auth (replace with proper auth)</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">        </span><span class="kn">if</span><span class="w"> </span><span class="s">(</span><span class="nv">$http_authorization</span><span class="w"> </span><span class="s">!=</span><span class="w"> </span><span class="s">&quot;Bearer</span><span class="w"> </span><span class="s">your-secret-key&quot;)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">            </span><span class="kn">return</span><span class="w"> </span><span class="mi">401</span><span class="p">;</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h2 id="environment-specific-configuration">Environment-Specific Configuration<a class="headerlink" href="#environment-specific-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="development">Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>POSTGRES_PASSWORD=dev_password_ok_here
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>VIRUSTOTAL_API_KEY=your_key
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>ABUSEIPDB_API_KEY=your_key
+</span></code></pre></div>
+<h3 id="staging">Staging<a class="headerlink" href="#staging" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>POSTGRES_PASSWORD=&lt;strong random&gt;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>VIRUSTOTAL_API_KEY=&lt;staging key&gt;
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>ABUSEIPDB_API_KEY=&lt;staging key&gt;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>OTEL_ENDPOINT=http://jaeger-staging:4317
+</span></code></pre></div>
+<h3 id="production">Production<a class="headerlink" href="#production" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>POSTGRES_PASSWORD=&lt;32+ char random&gt;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>VIRUSTOTAL_API_KEY=&lt;production key — premium recommended&gt;
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>ABUSEIPDB_API_KEY=&lt;production key&gt;
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>OTEL_ENDPOINT=http://otel-collector:4317
+</span></code></pre></div>
+<hr />
+<h2 id="scaling-notes">Scaling Notes<a class="headerlink" href="#scaling-notes" title="Permanent link">&para;</a></h2>
+<h3 id="ingest-horizontal">Ingest (Horizontal)<a class="headerlink" href="#ingest-horizontal" title="Permanent link">&para;</a></h3>
+<p>The ingest service is stateless — multiple replicas can publish to the same Redis Stream. Add a load balancer:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># In docker-compose.yml or Kubernetes:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">deploy</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</span></code></pre></div>
+<h3 id="detector-horizontal-via-consumer-groups">Detector (Horizontal via Consumer Groups)<a class="headerlink" href="#detector-horizontal-via-consumer-groups" title="Permanent link">&para;</a></h3>
+<p>Phase 1 uses a simple <code>XREAD BLOCK</code> loop. To scale horizontally, upgrade to Redis consumer groups (<code>XREADGROUP</code>):</p>
+<div class="language-go highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Phase 4 target — multiple detector instances, each processing different messages</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">redis</span><span class="p">.</span><span class="nx">XReadGroup</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">redis</span><span class="p">.</span><span class="nx">XReadGroupArgs</span><span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nx">Group</span><span class="p">:</span><span class="w">    </span><span class="s">&quot;detectors&quot;</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nx">Consumer</span><span class="p">:</span><span class="w"> </span><span class="nx">instanceID</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nx">Streams</span><span class="p">:</span><span class="w">  </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;threats:stream&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&gt;&quot;</span><span class="p">},</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nx">Count</span><span class="p">:</span><span class="w">    </span><span class="mi">50</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="nx">Block</span><span class="p">:</span><span class="w">    </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">,</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">})</span>
+</span></code></pre></div>
+<h3 id="timescaledb-read-replicas">TimescaleDB (Read Replicas)<a class="headerlink" href="#timescaledb-read-replicas" title="Permanent link">&para;</a></h3>
+<p>Dashboard queries can hit a read replica to offload the primary:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">postgres-replica</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">timescale/timescaledb:latest-pg16</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">POSTGRES_REPLICA</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">PRIMARY_HOST</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+</span></code></pre></div>
+<hr />
+<h2 id="kubernetes-planned-phase-6">Kubernetes (Planned — Phase 6)<a class="headerlink" href="#kubernetes-planned-phase-6" title="Permanent link">&para;</a></h2>
+<p>Helm chart and manifests are planned. The services are ready:</p>
+<ul>
+<li>All config via environment variables ✅</li>
+<li>Health endpoints on all services ✅</li>
+<li>Graceful shutdown on SIGTERM ✅</li>
+<li>No local filesystem state (except ClamAV signatures — use a PVC) ✅</li>
+</ul>
+<p>Track progress: <a href="https://github.com/vignesh2027/detect-backend-threat/issues">github.com/vignesh2027/detect-backend-threat/issues</a></p>
 
 
 
@@ -1287,7 +1497,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-05-28T15:39:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-05-28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-05-28T16:14:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-05-28</span>
   </span>
 
     
@@ -1297,7 +1507,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-05-28T15:39:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-05-28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2026-05-28T16:14:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2026-05-28</span>
   </span>
 
     
@@ -1334,7 +1544,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../adr/002-redis-streams-over-kafka/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ADR-002: Redis Streams over Kafka">
+          <a href="../development/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Development">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1344,20 +1554,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                ADR-002: Redis Streams over Kafka
+                Development
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../contributing/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing">
+          <a href="../../benchmarks/" class="md-footer__link md-footer__link--next" aria-label="Next: Benchmarks">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Contributing
+                Benchmarks
               </div>
             </div>
             <div class="md-footer__button md-icon">
