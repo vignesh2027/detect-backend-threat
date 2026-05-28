@@ -57,9 +57,9 @@ func TestLookupHash_NotFound(t *testing.T) {
 
 func TestReport_MaliciousRatio(t *testing.T) {
 	cases := []struct {
-		malicious    int
-		total        int
-		expectHigh   bool
+		malicious  int
+		total      int
+		expectHigh bool
 	}{
 		{0, 70, false},
 		{1, 70, true},

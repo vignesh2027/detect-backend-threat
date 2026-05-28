@@ -9,8 +9,9 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/vignesh2027/detect-backend-threat/internal/cache"
 	"go.opentelemetry.io/otel/trace"
+
+	"github.com/vignesh2027/detect-backend-threat/internal/cache"
 )
 
 const abuseIPDBURL = "https://api.abuseipdb.com/api/v2/check"
@@ -18,7 +19,7 @@ const abuseIPDBURL = "https://api.abuseipdb.com/api/v2/check"
 // IPReport summarises the reputation of an IP address.
 type IPReport struct {
 	IP           string
-	AbuseScore   int  // 0–100
+	AbuseScore   int
 	TotalReports int
 	IsPublic     bool
 	CountryCode  string

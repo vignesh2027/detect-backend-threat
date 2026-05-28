@@ -5,10 +5,11 @@ import (
 	"context"
 	"time"
 
+	"go.opentelemetry.io/otel/trace"
+
 	"github.com/vignesh2027/detect-backend-threat/internal/abuseipdb"
 	"github.com/vignesh2027/detect-backend-threat/internal/clamav"
 	"github.com/vignesh2027/detect-backend-threat/internal/virustotal"
-	"go.opentelemetry.io/otel/trace"
 )
 
 // Severity levels for detection results.
