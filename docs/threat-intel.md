@@ -47,7 +47,7 @@ The platform maps detected events to MITRE ATT&CK Enterprise v14 tactics and tec
 
 ## Adding a Detection Rule
 
-Detection rules are expressed as Go functions in `internal/detector/engine.go`. See [Contributing](../CONTRIBUTING.md) for the full guide.
+Detection rules are expressed as Go functions in `internal/detector/engine.go`. See [Contributing](contributing.md) for the full guide.
 
 Example — custom severity override based on MITRE tactic:
 
