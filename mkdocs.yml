@@ -11,7 +11,6 @@ theme:
     scheme: slate
     primary: custom
     accent: custom
-  custom_dir: docs/overrides
   features:
     - navigation.tabs
     - navigation.sections
@@ -65,4 +64,4 @@ nav:
     - "ADR-002: Redis Streams over Kafka": adr/002-redis-streams-over-kafka.md
   - Runbooks:
     - High False-Positive Rate: runbooks/high-false-positive-rate.md
-  - Contributing: ../CONTRIBUTING.md
+  - Contributing: contributing.md
