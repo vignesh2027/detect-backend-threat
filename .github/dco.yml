@@ -1,0 +1,8 @@
+# DCO bot configuration
+# https://github.com/dcoapp/app
+require:
+  members: false
+  committers: false
+allowRemediationCommits:
+  individual: true
+  organization: false
