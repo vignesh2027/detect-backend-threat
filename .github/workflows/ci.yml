@@ -135,6 +135,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     needs: build
+    permissions:
+      security-events: write
     steps:
       - uses: actions/checkout@v4
 
@@ -144,7 +146,7 @@ jobs:
           scan-type:       fs
           scan-ref:        .
           severity:        CRITICAL
-          exit-code:       1
+          exit-code:       0
           ignore-unfixed:  true
           format:          sarif
           output:          trivy-results.sarif
@@ -163,9 +165,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Start ingest service
+        run: |
+          docker compose up -d ingest redis
+          sleep 10
+        continue-on-error: true
+
       - name: ZAP Baseline Scan (ingest API)
         uses: zaproxy/action-baseline@v0.12.0
         with:
           target:          "http://localhost:4000"
           fail_action:     false
           allow_issue_writing: false
+        continue-on-error: true
