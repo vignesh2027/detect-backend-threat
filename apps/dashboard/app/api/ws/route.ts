@@ -49,6 +49,7 @@ async function startStreamReader(): Promise<void> {
   while (true) {
     try {
       // XREAD BLOCK 5000 COUNT 50 STREAMS threats:stream lastId
+      // @ts-expect-error — ioredis typings omit the BLOCK overload
       const result = await r.xread(
         "BLOCK", 5000,
         "COUNT", 50,
