@@ -49,9 +49,11 @@ async function startStreamReader(): Promise<void> {
   while (true) {
     try {
       // XREAD BLOCK 5000 COUNT 50 STREAMS threats:stream lastId
-      const result = await r.xread(
-        "BLOCK", 5000,
-        "COUNT", 50,
+      // r.call() bypasses ioredis overload type limitations for BLOCK variant
+      const result = await r.call(
+        "XREAD",
+        "BLOCK", "5000",
+        "COUNT", "50",
         "STREAMS", STREAM_KEY, lastId
       ) as [string, [string, string[]][]][] | null;
 
